@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --light-gray: #B7B8B3;
+  --deep-green: #0C4521;
+  --gold: #F0BA2C;
+  --lime-green: #6BC273;
+  --sage: #658172;
+  --mint-gray: #849C94;
+  --admin-accent: #1A5276;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  transition: all 0.3s;
+  background-color: var(--deep-green);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--sage);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: var(--light-gray);
+}
+
+/* Custom utilities */
+@layer utilities {
+  /* Utilidades existentes */
+  .bg-primary {
+    background-color: var(--deep-green);
+  }
+  .text-accent {
+    color: var(--gold);
+  }
+  .bg-secondary {
+    background-color: var(--lime-green);
+  }
+  .border-tertiary {
+    border-color: var(--sage);
+  }
+  .bg-muted {
+    background-color: var(--mint-gray);
+  }
+  .text-primary {
+    color: var(--deep-green);
+  }
+  .text-muted {
+    color: var(--sage);
+  }
+  .border-accent {
+    border-color: var(--gold);
+  }
+  .hover-bg-secondary:hover {
+    background-color: var(--lime-green);
+  }
+  .hover-text-accent:hover {
+    color: var(--gold);
+  }
+
+  /* Utilidades para admin */
+  .border-admin {
+    border-color: var(--admin-accent);
+  }
+  
+  .focus-border-admin:focus {
+    border-color: var(--admin-accent);
+    box-shadow: 0 0 0 2px rgba(26, 82, 118, 0.2);
+  }
+}
+
+/* Estilos para formularios admin */
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+  @apply w-full p-2 border border-gray-300 rounded focus-border-admin;
+}
