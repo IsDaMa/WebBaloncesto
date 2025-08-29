@@ -10,7 +10,8 @@ import {
   MdEvent,
   MdGroup,
   MdArticle,
-  MdContactMail
+  MdContactMail,
+  MdDensitySmall
 } from 'react-icons/md';
 
 const Header = ({ isMenuOpen, toggleMenu }) => {
@@ -22,6 +23,7 @@ const Header = ({ isMenuOpen, toggleMenu }) => {
       ? [
           { path: '/team', label: 'Equipo', icon: <MdGroup /> },
           { path: '/schedule', label: 'Calendario', icon: <MdEvent /> },
+          { path: '/clasificacion', label: 'Clasificacion', icon: <MdDensitySmall /> },
           { path: '/perfil', label: 'Perfil', icon: <MdPerson /> }
         ]
       : []),

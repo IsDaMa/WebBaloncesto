@@ -1,0 +1,113 @@
+/* Contenedor general */
+.clasificacion-container {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 2rem 1rem;
+}
+
+/* Encabezado */
+.clasificacion-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.clasificacion-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0c4521; /* deepGreen */
+  margin-bottom: 0.5rem;
+}
+
+.clasificacion-divider {
+  width: 100px;
+  height: 4px;
+  background: #d4af37; /* gold */
+  margin: 0 auto 1rem;
+  border-radius: 2px;
+}
+
+.clasificacion-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #374151; /* gris oscuro */
+  font-size: 1rem;
+}
+
+/* Tabs de equipos */
+.clasificacion-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.clasificacion-tab {
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 9999px;
+  background: #e5e7eb; /* gris */
+  color: #374151;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.clasificacion-tab:hover {
+  background: #d1d5db;
+}
+
+.clasificacion-tab.active {
+  background: #0c4521;
+  color: #fff;
+}
+
+/* Grid de jugadores */
+.clasificacion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.clasificacion-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+
+.clasificacion-container {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.clasificacion-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.clasificacion-table thead {
+  background: #0c4521; /* azul como el resto de tu web */
+  color: white;
+}
+
+.clasificacion-table th,
+.clasificacion-table td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.clasificacion-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.clasificacion-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+}

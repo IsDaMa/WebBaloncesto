@@ -1,0 +1,65 @@
+/* Contenedor principal */
+.noticia-detalle {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.noticia-detalle-inner {
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+}
+
+/* Título */
+.noticia-detalle h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0c4521;
+  margin-bottom: 1rem;
+}
+
+/* Fecha y autor */
+.noticia-meta {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Imagen */
+.noticia-detalle img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+}
+
+/* Contenido */
+.noticia-detalle p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+/* Botón volver */
+.noticia-volver {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.6rem 1.2rem;
+  background: #0c4521;
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.noticia-volver:hover {
+  background: #083418;
+}

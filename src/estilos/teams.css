@@ -1,0 +1,142 @@
+/* Contenedor general */
+.team-container {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 2rem 1rem;
+}
+
+/* Encabezado */
+.team-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.team-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0c4521; /* deepGreen */
+  margin-bottom: 0.5rem;
+}
+
+.team-divider {
+  width: 100px;
+  height: 4px;
+  background: #d4af37; /* gold */
+  margin: 0 auto 1rem;
+  border-radius: 2px;
+}
+
+.team-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #374151; /* gris oscuro */
+  font-size: 1rem;
+}
+
+/* Tabs de equipos */
+.team-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.team-tab {
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 9999px;
+  background: #e5e7eb; /* gris */
+  color: #374151;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.team-tab:hover {
+  background: #d1d5db;
+}
+
+.team-tab.active {
+  background: #0c4521;
+  color: #fff;
+}
+
+/* Grid de jugadores */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card de jugador */
+.player-card {
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen de jugador */
+.player-image {
+  position: relative;
+  aspect-ratio: 3 / 4;
+}
+
+.player-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(
+    to top,
+    rgba(12, 69, 33, 0.85),
+    rgba(12, 69, 33, 0)
+  );
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.player-number {
+  background: #d4af37;
+  color: #0c4521;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.player-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+/* Stats */
+.player-stats {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.player-stats p {
+  margin: 0.25rem 0;
+}
+
+.team-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+}

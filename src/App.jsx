@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute';
-import ProtectedAdminRoute from './components/ProtectedAdminRoute';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -12,10 +11,9 @@ import Contact from './pages/Contact';
 import Cuenta from './pages/Cuenta';
 import Perfil from './pages/Perfil';
 import LoadingSpinner from './components/LoadingSpinner';
-import AdminDashboard from './pages/admin/Dashboard';
-import AdminUsers from './pages/admin/Users';
-import AdminSettings from './pages/admin/Settings';
 import ErrorPage from './pages/Error';
+import NoticiaDetalle from "./pages/NoticiaDetalle";
+import Clasificacion from "./pages/Clasificacion";
 
 function AppWrapper() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,6 +31,7 @@ function AppWrapper() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cuenta" element={<Cuenta />} />
           <Route path="/error" element={<ErrorPage />} />
+          <Route path="/noticia/:id" element={<NoticiaDetalle />} />
 
           {/* Rutas protegidas para usuarios autenticados */}
           <Route
@@ -59,21 +58,14 @@ function AppWrapper() {
               </ProtectedRoute>
             }
           />
-
-          {/* Rutas de administración */}
-          <Route 
-            path="/admin" 
+          <Route
+            path="/clasificacion"
             element={
-              <ProtectedAdminRoute>
-                <AdminDashboard />
-              </ProtectedAdminRoute>
+              <ProtectedRoute>
+                <Clasificacion />
+              </ProtectedRoute>
             }
-          >
-            <Route index element={<AdminDashboard />} />
-            <Route path="users" element={<AdminUsers />} />
-            <Route path="settings" element={<AdminSettings />} />
-          </Route>
-
+          />
           {/* Redirección para rutas desconocidas */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
