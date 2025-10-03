@@ -100,7 +100,96 @@ const Home = () => {
     </div>
     </div>
       </section>
+{/* Social News Section */}
+<section className="py-12 md:py-16 bg-gradient-to-r from-green-100 to-green-200">
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-deepGreen mb-4">📢 Últimas Noticias</h2>
+      <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
+      <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+        Entérate de lo último en nuestras redes sociales.
+      </p>
+    </div>
 
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Facebook */}
+      <div className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
+        <div className="flex items-center mb-4">
+          <img src="/assets/icons/facebook.svg" alt="Facebook" className="w-8 h-8 mr-2" />
+          <h3 className="text-xl font-bold text-deepGreen">Facebook</h3>
+        </div>
+        <p className="text-gray-600 flex-grow">
+          🏀 Gran victoria del CB Cártama en el último partido contra CD Estrellas 🔥
+        </p>
+        <a
+          href="https://facebook.com/tucuenta"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block bg-gold text-white py-2 px-4 rounded-full text-sm font-medium hover:bg-amber-500 transition-colors"
+        >
+          Ver publicación
+        </a>
+      </div>
+
+      {/* Instagram */}
+      <div className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
+        <div className="flex items-center mb-4">
+          <img src="/assets/icons/instagram.svg" alt="Instagram" className="w-8 h-8 mr-2" />
+          <h3 className="text-xl font-bold text-deepGreen">Instagram</h3>
+        </div>
+        <p className="text-gray-600 flex-grow">
+          📸 Nueva galería del partido – revive los mejores momentos desde la cancha 💛💚
+        </p>
+        <a
+          href="https://instagram.com/tucuenta"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block bg-gold text-white py-2 px-4 rounded-full text-sm font-medium hover:bg-amber-500 transition-colors"
+        >
+          Ver publicación
+        </a>
+      </div>
+
+      {/* Twitter/X */}
+      <div className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
+        <div className="flex items-center mb-4">
+          <img src="/assets/icons/twitter.svg" alt="Twitter" className="w-8 h-8 mr-2" />
+          <h3 className="text-xl font-bold text-deepGreen">Twitter/X</h3>
+        </div>
+        <p className="text-gray-600 flex-grow">
+          🚨 Próximo partido el domingo a las 18:00 – ¡te esperamos en el pabellón!
+        </p>
+        <a
+          href="https://twitter.com/tucuenta"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block bg-gold text-white py-2 px-4 rounded-full text-sm font-medium hover:bg-amber-500 transition-colors"
+        >
+          Ver publicación
+        </a>
+      </div>
+
+      {/* YouTube */}
+      <div className="bg-white shadow-md rounded-lg p-6 flex flex-col justify-between hover:shadow-lg transition-shadow">
+        <div className="flex items-center mb-4">
+          <img src="/assets/icons/youtube.svg" alt="YouTube" className="w-8 h-8 mr-2" />
+          <h3 className="text-xl font-bold text-deepGreen">YouTube</h3>
+        </div>
+        <p className="text-gray-600 flex-grow">
+          🎥 Nuevo vídeo: resumen del partido y entrevistas con los jugadores ⭐
+        </p>
+        <a
+          href="https://youtube.com/tucuenta"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block bg-gold text-white py-2 px-4 rounded-full text-sm font-medium hover:bg-amber-500 transition-colors"
+        >
+          Ver publicación
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Call to Action */}
       <section className="py-12 md:py-16 bg-gold">
         <div className="container mx-auto px-4 text-center">
