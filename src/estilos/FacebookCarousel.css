@@ -1,0 +1,94 @@
+/* 🎯 Contenedor principal del carrusel */
+.facebook-carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f9fafb;
+  padding: 10px;
+}
+
+/* 🧩 Tarjeta del post */
+.facebook-post-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+}
+
+/* 📱 iframe del post */
+.facebook-post-wrapper iframe {
+  border: none !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 500px !important;
+}
+
+/* 🔵 Flechas de navegación */
+.facebook-carousel-container .swiper-button-next::after,
+.facebook-carousel-container .swiper-button-prev::after {
+  color: #21a752 !important; /* verde club */
+  font-size: 1.2rem;
+}
+
+.facebook-carousel-container .swiper-button-next,
+.facebook-carousel-container .swiper-button-prev {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: #21a752;
+}
+
+.facebook-carousel-container .swiper-button-next:hover,
+.facebook-carousel-container .swiper-button-prev:hover {
+  background: #d4af37; /* dorado */
+  color: #ffffff !important;
+}
+
+/* 🧭 Posición de flechas */
+.facebook-carousel-container .swiper-button-prev {
+  left: 10px;
+}
+.facebook-carousel-container .swiper-button-next {
+  right: 10px;
+}
+
+/* 📱 Ajustes responsivos */
+@media (max-width: 768px) {
+  .facebook-carousel-container .swiper-button-next::after,
+  .facebook-carousel-container .swiper-button-prev::after {
+    font-size: 1rem !important;
+  }
+
+  .facebook-carousel-container .swiper-button-next,
+  .facebook-carousel-container .swiper-button-prev {
+    top: 5px;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .facebook-post-wrapper iframe {
+    height: 420px !important;
+  }
+}
+
+/* 🔧 Correcciones visuales */
+.facebook-carousel-container iframe {
+  border: none !important;
+  overflow: hidden !important;
+}
+
+.facebook-carousel-container .fb_iframe_widget,
+.facebook-carousel-container .fb-post {
+  width: 100% !important;
+  max-width: 340px !important;
+  margin: 0 auto;
+}

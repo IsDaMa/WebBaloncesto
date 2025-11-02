@@ -1,0 +1,59 @@
+.instagram-carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f9fafb;
+  padding: 10px;
+}
+
+/* Tarjeta genérica */
+.social-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  height: 520px; /* 🔥 igual que Twitter */
+  overflow: hidden;
+}
+
+.social-embed {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ajuste interno del iframe */
+.social-card iframe {
+  border: none !important;
+  width: 100% !important;
+  height: 480px !important;
+}
+
+/* Flechas (color rosa Instagram) */
+.instagram-carousel-container .swiper-button-next::after,
+.instagram-carousel-container .swiper-button-prev::after {
+  color: #c13584 !important;
+  font-size: 1.2rem;
+}
+
+.instagram-carousel-container .swiper-button-next,
+.instagram-carousel-container .swiper-button-prev {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: #c13584;
+}
+
+.instagram-carousel-container .swiper-button-next:hover,
+.instagram-carousel-container .swiper-button-prev:hover {
+  background: #d4af37;
+  color: #ffffff !important;
+}
