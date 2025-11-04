@@ -9,6 +9,7 @@ const Home = () => {
   const [tweets, setTweets] = useState([]);
   const [facebook, setFacebook] = useState([]);
   const [instagramPosts, setInstagramPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // 🔹 Cargar últimas 5 publicaciones de cada red social
   useEffect(() => {
@@ -39,10 +40,11 @@ const Home = () => {
           .limit(5);
 
         // Logs para depuración
+/*        
         console.log("Tweets últimas 5:", tweetsData);
         console.log("Facebook últimas 5:", facebookData);
         console.log("Instagram últimas 5:", instagramData);
-
+*/
         if (tweetsError) console.error("Error tweets:", tweetsError);
         if (facebookError) console.error("Error facebook:", facebookError);
         if (instagramError) console.error("Error instagram:", instagramError);
@@ -52,6 +54,8 @@ const Home = () => {
         setInstagramPosts(instagramData?.map(r => ({ url: r.URL })) || []);
       } catch (error) {
         console.error("Error al cargar redes sociales:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -65,13 +69,13 @@ const Home = () => {
         className="relative h-[60vh] md:h-[80vh] bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, rgba(12, 69, 33, 0.7), rgba(12, 69, 33, 0.7)), url('/assets/images/hero-bg.jpg')",
+            "linear-gradient(to bottom, rgba(12, 69, 33, 0.7), rgba(12, 69, 33, 0.7)), url('/hero-bg.jpg')",
         }}
       >
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
           <div className="mb-4 w-40 h-40 md:w-48 md:h-48 flex items-center justify-center">
             <img
-              src="/assets/images/logo.png"
+              src="/logo.png"
               alt="Logo CB Cártama"
               className="h-full w-full object-contain"
             />
@@ -216,54 +220,55 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Facebook */}
-            <div className="flex flex-col items-center">
-              <div className="flex items-center mb-2">
-                <img src="/assets/icons/facebook.png" alt="Facebook" className="w-6 h-6 mr-2"/>
-                <h2 className="text-lg font-semibold text-[#1877f2]">Facebook</h2>
-              </div>
-              <FacebookCarousel
-                posts={facebook}
-                loop={facebook.length >= 3} 
-              />
-            </div>
+          {loading ? (
+            <p className="text-center text-gray-500">Cargando publicaciones...</p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Facebook */}
+              {facebook.length > 0 && (
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center mb-2">
+                    <img src="/facebook.png" alt="Facebook" className="w-6 h-6 mr-2" />
+                    <h2 className="text-lg font-semibold text-[#1877f2]">Facebook</h2>
+                  </div>
+                  <FacebookCarousel posts={facebook} />
+                </div>
+              )}
 
-            {/* Instagram */}
-            <div className="flex flex-col items-center">
-              <div className="flex items-center mb-2">
-                <img src="/assets/icons/instagram.png" alt="Instagram" className="w-6 h-6 mr-2"/>
-                <h2 className="text-lg font-semibold text-[#c13584]">Instagram</h2>
-              </div>
-              <InstagramCarousel
-                posts={instagramPosts}
-                loop={instagramPosts.length >= 3}
-              />
-            </div>
+              {/* Instagram */}
+              {instagramPosts.length > 0 && (
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center mb-2">
+                    <img src="/instagram.png" alt="Instagram" className="w-6 h-6 mr-2" />
+                    <h2 className="text-lg font-semibold text-[#c13584]">Instagram</h2>
+                  </div>
+                  <InstagramCarousel posts={instagramPosts} />
+                </div>
+              )}
 
-            {/* X (Twitter) */}
-            <div className="flex flex-col items-center">
-              <div className="flex items-center mb-2">
-                <img src="/assets/icons/x.png" alt="X" className="w-6 h-6 mr-2"/>
-                <h2 className="text-lg font-semibold text-black">X</h2>
-              </div>
-              <TwitterCarousel
-                tweets={tweets}
-                loop={tweets.length >= 3}
-              />
-            </div>
+              {/* X (Twitter) */}
+              {tweets.length > 0 && (
+                <div className="flex flex-col items-center">
+                  <div className="flex items-center mb-2">
+                    <img src="/x.png" alt="X" className="w-6 h-6 mr-2" />
+                    <h2 className="text-lg font-semibold text-black">X</h2>
+                  </div>
+                  <TwitterCarousel tweets={tweets} />
+                </div>
+              )}
 
-            {/* YouTube */}
-            <div className="flex flex-col items-center">
-              <div className="flex items-center mb-2">
-                <img src="/assets/icons/youtube.png" alt="YouTube" className="w-6 h-6 mr-2"/>
-                <h2 className="text-lg font-semibold text-[#ff0000]">YouTube</h2>
+              {/* YouTube */}
+              <div className="flex flex-col items-center">
+                <div className="flex items-center mb-2">
+                  <img src="/youtube.png" alt="YouTube" className="w-6 h-6 mr-2" />
+                  <h2 className="text-lg font-semibold text-[#ff0000]">YouTube</h2>
+                </div>
+                <SocialCard name="YouTube" icon="/assets/icons/youtube.png">
+                  <p>🎥 Nuevo vídeo: PROXIMAMENTE</p>
+                </SocialCard>
               </div>
-              <SocialCard name="YouTube" icon="/assets/icons/youtube.png">
-                <p>🎥 Nuevo vídeo: PROXIMAMENTE</p>
-              </SocialCard>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
